@@ -9,7 +9,7 @@ export const HomePage = () => {
             <h1 className={css.title}>France.</h1>
             <br /><br /><br /><br /><br /><br />
             <p className={css.description}>
-                The Ideal Place
+                The ideal place
             </p>
         </div>
     )

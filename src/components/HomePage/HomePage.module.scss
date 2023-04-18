@@ -1,5 +1,5 @@
 body{
-    background-image: url(https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/eiffel4.jpg);
+    background-image: url(https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/eiffel8.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-attachment: fixed;
@@ -16,7 +16,9 @@ body{
     left: 40px;
     font-size: 100pt;
     font-family: "Dongle";
-    margin-top: 150px;
+    margin-top: 50px;
+    color: #aa7c09;
+    position: fixed;
 }
 
 .description {
@@ -24,5 +26,7 @@ body{
     left: 40px;
     font-size: 65pt;
     font-family: "Dongle";
-    margin-top: 150px;
+    margin-top: 50px;
+    color: #aa7c09;
+    position: fixed;
 }
