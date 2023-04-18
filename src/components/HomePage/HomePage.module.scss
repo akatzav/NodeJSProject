@@ -1,4 +1,15 @@
-.homePage {}
+body{
+    background-image: url(https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/eiffel3.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+        width: 100%;
+}
+
+.homePage  {
+    /*  */
+}
 
 .title {
     position: absolute;
