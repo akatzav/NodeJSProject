@@ -1,32 +1,10 @@
-body{
+.homePage{
     background-image: url(https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/eiffel8.jpg);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-attachment: fixed;
-        background-size: cover;
-        width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%; 
+    overflow-y: scroll;
 }
 
-.homePage  {
-    /*  */
-}
-
-.title {
-    position: absolute;
-    left: 40px;
-    font-size: 100pt;
-    font-family: "Dongle";
-    margin-top: 50px;
-    color: #aa7c09;
-    position: fixed;
-}
-
-.description {
-    position: absolute;
-    left: 40px;
-    font-size: 65pt;
-    font-family: "Dongle";
-    margin-top: 50px;
-    color: #aa7c09;
-    position: fixed;
-}

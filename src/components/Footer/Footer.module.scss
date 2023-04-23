@@ -1,0 +1,32 @@
+.details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #053505;
+    margin-bottom: 0;
+}
+
+.details:hover{
+    color:red;
+    cursor: pointer;
+}
+
+.name{
+    color:#aa7c09;
+    font-family: Dongle;
+    font-size: 30px;
+    margin-right: 25px;
+}
+
+.phone{
+    color: #aa7c09;
+    font-family: Dongle;
+    font-size: 30px;
+    margin-right: 25px;
+}
+
+.email{
+    color: #aa7c09;
+    font-family: Dongle;
+    font-size: 30px;
+}
