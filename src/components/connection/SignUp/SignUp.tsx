@@ -3,6 +3,7 @@ import { NavLinks } from '../../NavBar/NavLinks';
 import { Footer } from '../../Footer/Footer';
 import css from './SignUp.module.scss'
 import axios from 'axios';
+import NavBar from '../../NavBar/NavBar';
 //להירשם
 
 
@@ -29,8 +30,8 @@ export const SignUp = () => {
     const [submit, setSubmit] = useState(false);
     const [error, setError] = useState(false);
     const [emailError, setEmailError] = useState('');
-    const [phoneError, setPhoneError] = useState('');
     const [errorPass, setErrorPass] = useState('');
+    const [errorUser,setErrorUser]=useState('')
     const [user, setUser] = useState([])
 
 
@@ -53,9 +54,14 @@ export const SignUp = () => {
     const handleUser = (e: any) => {
         setUserName(e.currentTarget.value);
         if(userName==='' || userName.length==0){
-            alert('invalid username.')
+            setErrorUser('Invalid Username.')
+            setSubmit(false);
         }
-        setSubmit(false);
+        else{
+            setErrorUser('')
+            setError(false)
+        }
+        
     }
 
 
@@ -127,10 +133,11 @@ export const SignUp = () => {
                 style={{
                     display: error ? '' : 'none',
                     color: 'red',
-                    fontFamily: 'Dongle',
-                    fontSize: "15px"
+                    fontFamily: 'lato',
+                    fontSize: "15px",
+        
                 }}>
-                <h2>Please enter all the fields</h2>
+                <h2>Please enter correct values </h2>
             </div>
         );
     };
@@ -142,9 +149,10 @@ export const SignUp = () => {
                 style={{
                     display: submit ? '' : 'none',
                     color: 'green',
-                    fontSize: "15px"
+                    fontSize: "15px",
+                    fontFamily:"lato"
                 }}>
-                <h2>User successfully registered!!</h2>
+                <h2>You have successfully registered!</h2>
             </div>
         );
     };
@@ -156,11 +164,13 @@ export const SignUp = () => {
     return (
 
         <div className={css.signup}>
+            <NavBar />
 
             <form className={css.form}>
                 <h1 className={css.title}>Sign up</h1>
                 <label htmlFor="" className={css.label}>Username:</label><br />
                 <input type="text" value={userName} placeholder='Username' onChange={handleUser} className={css.input} /><br />
+                {errorUser && <h2 style={{ color: 'red', fontSize: "10px" }}>{errorUser}</h2>}
                 <label htmlFor="" className={css.label}>Email:</label><br />
                 <input type="email" id='email' value={email} placeholder='Email' onChange={handleEmail} className={css.input} />
                 <br />
@@ -178,8 +188,8 @@ export const SignUp = () => {
                 </div>
 
             </form>
-            <Footer />
-        </div>
+{/*             <Footer />
+ */}        </div>
     )
 }
 

@@ -8,8 +8,10 @@ export const HomePage = () => {
 
     return (
         <div className={css.homePage}>
+            <section className={css.section}>
             <NavBar />
             <TitleAndDescription />
+            </section>
             <p>
                 <Footer />
             </p>

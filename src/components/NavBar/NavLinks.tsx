@@ -1,3 +1,4 @@
+import { BiSearchAlt } from 'react-icons/bi'
 import css from './NavBar.module.scss'
 import { motion } from 'framer-motion'
 
@@ -21,7 +22,7 @@ export const NavLinks = (props: any) => {
                 <a href='/Signin' className={css.a}> Sign In</a>
             </motion.li>
 
-            <motion.li onClick={() => props.isMobile && props.closeMobileMenu()}
+            {/* <motion.li onClick={() => props.isMobile && props.closeMobileMenu()}
                 initial={animateFrom} animate={animateTo} transition={{ delay: 0.20 }}>
                 <a href='/' className={css.a}>  Home </a>
             </motion.li>
@@ -33,13 +34,20 @@ export const NavLinks = (props: any) => {
 
             <motion.li onClick={() => props.isMobile && props.closeMobileMenu()}
                 initial={animateFrom} animate={animateTo} transition={{ delay: 0.05 }}>
-                <a href='/' className={css.a}> favourites</a>
+                <a href='/products' className={css.a}> products</a>
             </motion.li>
 
             <motion.li onClick={() => props.isMobile && props.closeMobileMenu()}
                 initial={animateFrom} animate={animateTo} transition={{ delay: 0.05 }}>
-                <a href='/products' className={css.a}> products</a>
-            </motion.li>
+                <a href='/' className={css.a}> favourites</a>
+            </motion.li> */}
+
+            
+
+            <section className={css.section}>
+            <input type="text" className={css.search} placeholder='Search'/>
+                <BiSearchAlt className={css.icon} />
+            </section>
 
         </ul>
     )

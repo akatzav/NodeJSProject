@@ -1,8 +1,15 @@
 .homePage{
-   background-color:rgb(6, 6, 92);
+    /* background-image: url(https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/home.jpg);
+    background-repeat: no-repeat;*/
+    background-position: center center;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover; 
+    background-color: #000;
     width: 100%; 
-    overflow-y: scroll;
+    height: 100%;
+    filter: grayscale(30%);
 }
 
+.section{
+    display: flex;
+}
