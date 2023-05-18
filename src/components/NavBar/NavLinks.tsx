@@ -10,9 +10,15 @@ export const NavLinks = (props: any) => {
     return (
 
         <ul className={css.ul}>
+
+            <motion.li onClick={() => props.isMobile && props.closeMobileMenu()}
+                initial={animateFrom} animate={animateTo} transition={{ delay: 0.05 }}>
+                <a href='/Signup' className={css.a}> Sign up</a>
+            </motion.li>
+
             <motion.li onClick={() => props.isMobile && props.closeMobileMenu()}
                 initial={animateFrom} animate={animateTo} transition={{ delay: 0.30 }}>
-                <a href='/LogIn' className={css.a}> Log In</a>
+                <a href='/Signin' className={css.a}> Sign In</a>
             </motion.li>
 
             <motion.li onClick={() => props.isMobile && props.closeMobileMenu()}
@@ -32,7 +38,7 @@ export const NavLinks = (props: any) => {
 
             <motion.li onClick={() => props.isMobile && props.closeMobileMenu()}
                 initial={animateFrom} animate={animateTo} transition={{ delay: 0.05 }}>
-                <a href='/' className={css.a}> Atractions</a>
+                <a href='/products' className={css.a}> products</a>
             </motion.li>
 
         </ul>

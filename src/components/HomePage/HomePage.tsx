@@ -1,7 +1,7 @@
 import React from 'react'
 import css from './HomePage.module.scss'
 import NavBar from '../NavBar/NavBar'
-import { TitleAndDescription } from '../titleAndescription/TitleAndDescription'
+import { TitleAndDescription } from '../TitleAndescription/TitleAndDescription'
 import { Footer } from '../Footer/Footer'
 
 export const HomePage = () => {
