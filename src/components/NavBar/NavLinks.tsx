@@ -22,7 +22,7 @@ export const NavLinks = (props: any) => {
                 <a href='/Signin' className={css.a}> Sign In</a>
             </motion.li>
 
-            {/* <motion.li onClick={() => props.isMobile && props.closeMobileMenu()}
+            <motion.li onClick={() => props.isMobile && props.closeMobileMenu()}
                 initial={animateFrom} animate={animateTo} transition={{ delay: 0.20 }}>
                 <a href='/' className={css.a}>  Home </a>
             </motion.li>
@@ -40,7 +40,7 @@ export const NavLinks = (props: any) => {
             <motion.li onClick={() => props.isMobile && props.closeMobileMenu()}
                 initial={animateFrom} animate={animateTo} transition={{ delay: 0.05 }}>
                 <a href='/' className={css.a}> favourites</a>
-            </motion.li> */}
+            </motion.li> 
 
             
 

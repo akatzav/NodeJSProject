@@ -1,13 +1,28 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '../../app/hooks';
+import Modal from "react-modal";
+
 
 export const Test = () => {
   const [first, setFirst] = useState('');
   const [last, setLast] = useState('');
   const [email, setEmail] = useState('');
-
-
   const [student, setStudent] = useState([])
 
+  const dispatch = useAppDispatch();
+  const nav = useNavigate();
+
+  const [isOpen, setOpen] = useState(false);
+  Modal.setAppElement("#root");
+
+  const closeModal = () => {
+    setOpen(false);
+  };
+
+  const openModal = () => {
+    setOpen(true);
+  };
   //once->use Effect
   useEffect(() => {
     fetch('http://localhost:3001/api/students')
