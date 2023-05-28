@@ -7,7 +7,7 @@ const data = {
             brand: "Samsung",
             orginal_price: "$270",
             price: "$245.37",
-            image: "image1.jpg",
+            image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image1.jpg",
             countInStock: 10,
         },
         {
@@ -17,7 +17,7 @@ const data = {
             brand: "Xiaomi",
             orginal_price: "$220",
             price: "$150",
-            image: "image2.jpg",
+            image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image2.jpg",
             countInStock:10
         },
         {
@@ -27,7 +27,7 @@ const data = {
             brand: "Samsung",
             orginal_price: "$570",
             price: "$500",
-            image: "image3.jpg",
+            image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image3.jpg",
             countInStock:10
         },
         {
@@ -37,7 +37,7 @@ const data = {
             brand: "Apple",
             orginal_price: "$550",
             price: "$450",
-            image: "image4.jpg",
+            image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image4.jpg",
             countInStock: 10
         },
         {
@@ -47,7 +47,7 @@ const data = {
             brand: "Apple",
             orginal_price: "$1000",
             price: "$900",
-            image: "image5.jpg",
+            image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image5.jpg",
             countInStock: 10
         },
         {
@@ -57,7 +57,7 @@ const data = {
             brand: "Dell",
             orginal_price: "$1200",
             price: "$1100",
-            image: "image7.jpg",
+            image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image6.jpg",
             countInStock: 10
         },
         {
@@ -67,7 +67,7 @@ const data = {
             brand: "Apple",
             orginal_price: "$1500",
             price: "$1350",
-            image: "image7.jpg",
+            image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image7.jpg",
             countInStock: 10
         }, {
             _id: "8",
@@ -76,7 +76,7 @@ const data = {
             brand: "Lenovo",
             orginal_price: "$1700",
             price: "$1500",
-            image: "image8.jpg",
+            image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image8.jpg",
             countInStock: 10
         },
         {
@@ -86,7 +86,7 @@ const data = {
             brand: "Microsoft",
             orginal_price: "$400",
             price: "$370",
-            image: "image9.jpg",
+            image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image9.jpg",
             countInStock: 10
         },
         {
@@ -96,7 +96,7 @@ const data = {
             brand: "Apple",
             orginal_price: "$294",
             price: "$268",
-            image: "image10.jpg",
+            image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image10.jpg",
             countInStock: 10
         },
         {
@@ -106,7 +106,7 @@ const data = {
             brand: "Apple",
             orginal_price: "$499",
             price: "$349.11",
-            image: "image11.jpg",
+            image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image11.jpg",
             countInStock: 10
         },
         {
@@ -116,7 +116,7 @@ const data = {
             brand: "Samsung",
             orginal_price: "$340",
             price: "$310",
-            image: "image12.jpg",
+            image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image12.jpg",
             countInStock: 10
 
         }

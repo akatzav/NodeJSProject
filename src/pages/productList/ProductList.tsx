@@ -1,6 +1,7 @@
 import React from 'react'
 import data from '../../data/products'
 import css from './ProductList.module.scss'
+import { Footer } from '../../components/Footer/Footer'
 
 export const ProductList = () => {
     return (
@@ -17,6 +18,7 @@ export const ProductList = () => {
                 ))}
 
             </div>
+            <Footer />
         </>
     )
 }
