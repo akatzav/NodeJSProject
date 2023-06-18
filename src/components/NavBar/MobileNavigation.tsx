@@ -6,7 +6,7 @@ import { AiOutlineCloseCircle } from 'react-icons/ai'
 
 
 
-export const MobileNavigation = () => {
+export const MobileNavigation = () => {/* 
     const [open, setOpen] = useState(false);
 
     const hamburgerIcon = <CgMenuRound className={css.Hamburder}
@@ -19,11 +19,11 @@ export const MobileNavigation = () => {
         onClick={() => setOpen(!open)} />
 
     const closeMobileMenu = () => setOpen(false);
-
+ */
     return (
         <nav className={css.MobileNavigation}>
-            {open ? closeIcon : hamburgerIcon}
-            {open && <NavLinks isMobile={true} closeMobileMenu={closeMobileMenu} />}
+            {/* {open ? closeIcon : hamburgerIcon}
+            {open && <NavLinks isMobile={true} closeMobileMenu={closeMobileMenu} />} */}
         </nav>
     )
 }

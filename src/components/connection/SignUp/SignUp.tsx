@@ -4,6 +4,8 @@ import { Footer } from '../../Footer/Footer';
 import css from './SignUp.module.scss'
 import axios from 'axios';
 import NavBar from '../../NavBar/NavBar';
+import { Nav } from '../Nav/Nav';
+/* import { NavSign } from '../../NavBar/navSign/navSign'; */
 //להירשם
 
 
@@ -24,15 +26,16 @@ export const SignUp = () => {
     })
 
 
-    const [userName, setUserName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [userName, setUserName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [submit, setSubmit] = useState(false);
     const [error, setError] = useState(false);
     const [emailError, setEmailError] = useState('');
     const [errorPass, setErrorPass] = useState('');
-    const [errorUser,setErrorUser]=useState('')
-    const [user, setUser] = useState([])
+    const [errorUser, setErrorUser] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [confirmPasswordError, setConfirmPasswordError] = useState('');
 
 
 
@@ -53,22 +56,24 @@ export const SignUp = () => {
 
     const handleUser = (e: any) => {
         setUserName(e.currentTarget.value);
-        if(userName==='' || userName.length==0){
+
+        if (userName === '' || userName.length == 0) {
             setErrorUser('Invalid Username.')
             setSubmit(false);
         }
-        else{
+        else {
             setErrorUser('')
             setError(false)
         }
-        
+
     }
 
 
 
     const handleEmail = (e: any) => {
         setEmail(e.currentTarget.value);
-        if (!isValidEmail(e.target.value) || email==='' ||email.length==0) {
+        console.log(email)
+        if (!isValidEmail(e.target.value) || email === '' || email.length == 0) {
             setEmailError('Invalid Email.');
             setSubmit(false)
         }
@@ -80,7 +85,7 @@ export const SignUp = () => {
 
     const handlePassword = (e: any) => {
         setPassword(e.currentTarget.value);
-        if (!isValidPassword(e.target.value) || password==='' ||password.length==0) {
+        if (!isValidPassword(e.target.value) || password === '' || password.length == 0) {
             setErrorPass('Invalid Password.')
             setSubmit(false)
         }
@@ -90,12 +95,30 @@ export const SignUp = () => {
         }
     }
 
+
+    const handleConfirmPassword = async (e: any) => {
+            setConfirmPassword(e.currentTarget.value);
+            
+    }
+
+
+    const check=()=>{
+        if (password !== confirmPassword) {
+            setConfirmPasswordError("Confirm Password should match with password");
+        }
+        else {
+            alert('Is equal')
+            setConfirmPasswordError('')
+        }
+    }
+
+    
     //if the value is empty
     const handleSubmit = (e: any) => {
         //מונע ריענון של העמוד
         e.preventDefault();
 
-        if (!isValidEmail(email)|| !isValidPassword(password)) {
+        if (!isValidEmail(email) || !isValidPassword(password)) {
             setError(true);
             setSubmit(false)
             alert('Please enter all fields')
@@ -107,7 +130,6 @@ export const SignUp = () => {
 
         }
         const newUser = { username: userName, email, password }
-
 
         fetch(url, {
             method: 'POST',//or 'PUT'
@@ -121,7 +143,6 @@ export const SignUp = () => {
                 console.log(json);
                 /* newStudent._id=json.id */
             }).catch(e => console.log(e));
-
     };
 
 
@@ -135,7 +156,7 @@ export const SignUp = () => {
                     color: 'red',
                     fontFamily: 'lato',
                     fontSize: "15px",
-        
+
                 }}>
                 <h2>Please enter correct values </h2>
             </div>
@@ -150,7 +171,7 @@ export const SignUp = () => {
                     display: submit ? '' : 'none',
                     color: 'green',
                     fontSize: "15px",
-                    fontFamily:"lato"
+                    fontFamily: "lato"
                 }}>
                 <h2>You have successfully registered!</h2>
             </div>
@@ -158,29 +179,34 @@ export const SignUp = () => {
     };
 
 
-
-
-
     return (
 
         <div className={css.signup}>
-            <NavBar />
+            <Nav />
 
             <form className={css.form}>
-                <h1 className={css.title}>Sign up</h1>
-                <label htmlFor="" className={css.label}>Username:</label><br />
-                <input type="text" value={userName} placeholder='Username' onChange={handleUser} className={css.input} /><br />
+                <h1 className={css.title}>Sign Up</h1>
+                {/* <label htmlFor="" className={css.label}>Username:</label><br /> */}
+                <input type="text" value={userName} placeholder=' &#xf007;
+                Username*' onChange={handleUser} className={css.input} /><br />
                 {errorUser && <h2 style={{ color: 'red', fontSize: "10px" }}>{errorUser}</h2>}
-                <label htmlFor="" className={css.label}>Email:</label><br />
-                <input type="email" id='email' value={email} placeholder='Email' onChange={handleEmail} className={css.input} />
+                {/* <label htmlFor="" className={css.label}>Email:</label><br /> */}
+                <input type="email" id='email' value={email} placeholder=' &#xf0e0; Email*' onChange={handleEmail} className={css.input} />
                 <br />
                 {emailError && <h2 style={{ color: 'red', fontSize: "10px" }}>{emailError}</h2>}
 
-                <label htmlFor="" className={css.label}>Password:</label><br />
-                <input type="password" value={password} placeholder='Password' onChange={handlePassword} className={css.input} />
+                {/* <label htmlFor="" className={css.label}>Password:</label><br /> */}
+                <input type="password" value={password} placeholder=' &#xf023; Password*' onChange={handlePassword} className={css.input} />
                 <br />
                 {errorPass && <h2 style={{ color: 'red', fontSize: "10px" }}>{errorPass}</h2>}
 
+                <input type="password" value={confirmPassword} placeholder='&#xf00c; Confirm Password*' onChange={(e)=>handleConfirmPassword(e)} className={css.input} /><br />
+
+                {confirmPasswordError && <h2 style={{ color: 'red', fontSize: "10px" }}>{confirmPasswordError}</h2>}
+                <div className={css.rem}>
+                    <input type="checkbox" />
+                    <label htmlFor=""> Remember me</label>
+                </div>
                 <button type='submit' className={css.button} onClick={handleSubmit}>Sign up</button>
                 <div className="messages">
                     {errorMessage()}
@@ -188,12 +214,12 @@ export const SignUp = () => {
                 </div>
 
             </form>
-{/*             <Footer />
+            {/*             <Footer />
  */}        </div>
     )
 }
 
-export default SignUp 
+export default SignUp
 
 
 

@@ -1,51 +1,51 @@
-.signup{
-    margin-top: 0;/* 
-    overflow-y: scroll;
-    height: 100%;  */
-    background-color:black;
-    height:  100px;
-    width: 100%;
-    position: absolute;
-}
-
-.form{
-    margin-top: 50px;
-    margin-bottom: 110px;
-}
-
 .title{
-    margin-top: 30px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
     font-size: 50px;
-    font-family: "Dongle";
-    color: #053505;
+    font-family: lato;
+    color: aqua;
 }
 
-.label{
-    color: #053505;
-    font-weight: bold;
-    bottom: 30px;
-    padding-bottom: 100px;
-    margin: 100px;
-}
 .input{
     height: 30px;
-    border-radius: 10px;
+    border-radius: 20px;
     width: 200px;
+    margin-bottom: 20px;
+    background-color: black;
+    border: 1px solid aqua;
+    font-family: 'FontAwesome';
+    font-weight: 900;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.rem{
+    margin-right: auto;
+    color: #fff;
+
 }
 
 .button{
     cursor: pointer;
     width: 200px;
-    height: 30px;
+    height: 35px;
     margin-top: 20px;
-    background-color: #053505;
-    color: #aa7c09;
-    font-size: 30px;
-    border-radius: 10px;
-    font-family: 'dongle';
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: aqua;
+    color: #000;
+    font-size: 20px;
+    border-radius: 20px;
+    font-family: lato;
     margin-left: auto;
     margin-right: auto;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.button:hover{
+    background-color:chartreuse;
 }

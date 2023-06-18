@@ -5,7 +5,7 @@ export const TitleAndDescription = () => {
   return (
     <div className={css.tAd}>
       <h1 className={css.title}>Equipment Tour.</h1>
-      <p className={css.description}> Unprecedented promotions</p>
+      <p className={css.description}> Non Stop Sale</p>
 
     </div>
   )

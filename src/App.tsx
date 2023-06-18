@@ -10,6 +10,7 @@ import { Test } from './components/test/Test';
 import { NotFound } from './components/Not-Found/NotFound';
 import { ShopSection } from './components/HomePage/ShopSection/ShopSection';
 import { ProductList } from './pages/productList/ProductList';
+import { Search } from './components/search/Search';
 
 function App() {
   return (

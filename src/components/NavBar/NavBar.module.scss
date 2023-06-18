@@ -1,115 +1,51 @@
+.navbar{
+    position: absolute;
+    top: 80px;
 
-.ul {
-    margin-top: 100px;
-    list-style-type: none;
-    display: flex;
 }
 
-.a {
+.navbar a{
+    display: inline-block;
+    width: 100px;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
     text-decoration: none;
-    color:black;
     font-family: lato;
-    font-size: 20px;
-    padding: 15px;
     font-weight: bold;
-    transition: transform .2s;
-    margin-top: 300px;
-    border: 1px solid rgb(8, 180, 233);
-    background-color: rgb(8, 180, 233);
-    border-radius: 10px;
-    margin: 8px;
-    padding: 8px;
+    font-size: 22px;
 
 }
 
-.a:hover{
-    color:red;
-    cursor: pointer;
-    -ms-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
-    
+.navbar a.active{
+    color: aqua;
 }
 
-.NavBar .MobileNavigation {
-    display: none;
+
+.pointer{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: aqua;
+    transform: translateX(55px);
+    transition: transform 0.3s ease-in-out;
 }
 
-@media (max-width:990px) {
-    .NavBar .Navigation {
-        display: none;
-    }
 
-    .NavBar .MobileNavigation {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .NavBar .MobileNavigation .Hamburder {
-        cursor: pointer;
-        position: fixed;
-        z-index: 1;
-        margin-top: 40px;
-        position: absolute;
-        right: 5%;
-    }
-
-    .NavBar nav .ul {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 2px;
-        right: 0;
-        width: 100%;
-        background: #181818;
-        border-top: 1px solid #a9927d;
-    }
-
-    .NavBar nav .ul li {
-        padding-left: 15%;
-    }
-
-    .NavBar {
-        opacity: 1;
-    }
-
-    .NavBar a {
-        color: #fff;
-    }
-
-    .NavBar a:hover {
-        border-bottom: none;
-        color: #a9927d;
-    }
-
+.navbar a:hover{
+    color: aqua;
+    transition: color 0.3s ease-in-out;
 }
 
-.search {
-    width: 200px;
-    height: 30px;
-    border-radius: 10px;
-    display: flex;
+.navbar a:nth-child(2):hover ~ .pointer{
+    transform: translateX(180px);
 }
 
-.icon {
-    position: absolute;
-    right: -20px;
-    top: 7px;
-    margin: -5px;
-    width: 20px;
-    height: 30px;
-    cursor: pointer;
-    color: rgb(8, 180, 233);
-    font-weight: bold;
-    
+.navbar a:nth-child(3):hover ~ .pointer {
+    transform: translateX(305px);
 }
 
-.icon:hover {
-    color: aliceblue;
+.navbar a:nth-child(4):hover ~ .pointer {
+    transform: translateX(415px);
 }
 
-.section{
-    position: absolute;
-    right: 60px;
-}

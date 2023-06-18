@@ -1,0 +1,28 @@
+.search {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+}
+
+.icon {
+    position: absolute;
+    right: -20px;
+    top: 7px;
+    margin: -5px;
+    width: 20px;
+    height: 30px;
+    cursor: pointer;
+    color: rgb(8, 180, 233);
+    font-weight: bold;
+
+}
+
+.icon:hover {
+    color: aliceblue;
+}
+
+.section {
+    position: absolute;
+    right: 60px;
+}
