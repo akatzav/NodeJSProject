@@ -5,19 +5,24 @@ import { TitleAndDescription } from '../../TitleAndescription/TitleAndDescriptio
 import { Footer } from '../../Footer/Footer'
 import { NavLinks } from '../../NavBar/NavLinks'
 import { Nav } from '../../connection/Nav/Nav'
+import { Search } from '../../search/Search'
 
 export const HomePage = () => {
 
     return (
         <div className={css.homePage}>
+            <div>
+                <Search />
+            </div>
+            
 
             <section className={css.section}>
-                <NavLinks />
+                <NavBar/>
                 <TitleAndDescription />
             </section>
-            <p>
-                <Footer />
-            </p>
+            
+                {/* <Footer /> */}
+            
         </div>
     )
 }

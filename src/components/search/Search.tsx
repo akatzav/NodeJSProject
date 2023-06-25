@@ -28,7 +28,6 @@ export const Search = () => {
             <input type="text" className={css.search} placeholder='Search' onSubmit={submitHandler} onClick={(e)=>setKeyword(e.currentTarget.value)}/>
             <BiSearchAlt className={css.icon} />
         </section>
-        <button>Search</button>
         </form>
         </div>
     )

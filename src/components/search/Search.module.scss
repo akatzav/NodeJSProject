@@ -1,19 +1,22 @@
 .search {
+    position: absolute;
     width: 200px;
     height: 30px;
-    border-radius: 10px;
+    border-radius: 30px;
     display: flex;
+    right: 0;
+    top: 65px;
 }
 
 .icon {
     position: absolute;
     right: -20px;
-    top: 7px;
+    top: 70px;
     margin: -5px;
     width: 20px;
     height: 30px;
     cursor: pointer;
-    color: rgb(8, 180, 233);
+    color: red;
     font-weight: bold;
 
 }

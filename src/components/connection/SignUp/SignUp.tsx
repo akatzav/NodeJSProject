@@ -38,7 +38,10 @@ export const SignUp = () => {
     const [confirmPasswordError, setConfirmPasswordError] = useState('');
 
 
-
+    const isValidConfirm = (confirmPass: string) => {
+        if (confirmPass === password)
+            return true;
+    }
 
 
     const isValidEmail = (email: string) => {
@@ -97,28 +100,25 @@ export const SignUp = () => {
 
 
     const handleConfirmPassword = async (e: any) => {
-            setConfirmPassword(e.currentTarget.value);
-            
-    }
+        setConfirmPassword(e.currentTarget.value);
 
-
-    const check=()=>{
-        if (password !== confirmPassword) {
-            setConfirmPasswordError("Confirm Password should match with password");
+        if (!isValidConfirm(e.target.value)) {
+            setConfirmPasswordError('Error')
         }
         else {
-            alert('Is equal')
             setConfirmPasswordError('')
         }
     }
 
-    
+    console.log(password,confirmPassword,confirmPasswordError)
+
+
     //if the value is empty
     const handleSubmit = (e: any) => {
         //מונע ריענון של העמוד
         e.preventDefault();
 
-        if (!isValidEmail(email) || !isValidPassword(password)) {
+        if (!isValidEmail(email) || !isValidPassword(password) ||!isValidConfirm(confirmPassword)) {
             setError(true);
             setSubmit(false)
             alert('Please enter all fields')
@@ -200,7 +200,7 @@ export const SignUp = () => {
                 <br />
                 {errorPass && <h2 style={{ color: 'red', fontSize: "10px" }}>{errorPass}</h2>}
 
-                <input type="password" value={confirmPassword} placeholder='&#xf00c; Confirm Password*' onChange={(e)=>handleConfirmPassword(e)} className={css.input} /><br />
+                <input type="password" value={confirmPassword} placeholder='&#xf00c; Confirm Password*' onChange={(e) => handleConfirmPassword(e)} className={css.input} /><br />
 
                 {confirmPasswordError && <h2 style={{ color: 'red', fontSize: "10px" }}>{confirmPasswordError}</h2>}
                 <div className={css.rem}>

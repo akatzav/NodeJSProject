@@ -4,8 +4,8 @@ import { BiSearchAlt } from 'react-icons/bi'
 export const TitleAndDescription = () => {
   return (
     <div className={css.tAd}>
-      <h1 className={css.title}>Equipment Tour.</h1>
-      <p className={css.description}> Non Stop Sale</p>
+      <h1 className={css.title}>Non Stop Sale.</h1>
+      <p className={css.description}>Mobile equipment <br />and computers</p>
 
     </div>
   )

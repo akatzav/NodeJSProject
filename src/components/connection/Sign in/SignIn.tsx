@@ -8,7 +8,7 @@ import SignUp from '../SignUp/SignUp';
 import { ProductList } from '../../../pages/productList/ProductList';
 import { Nav } from '../Nav/Nav';
 
-export const LogIn = () => {
+export const LogIn = ({ setUser }: any) => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -18,14 +18,13 @@ export const LogIn = () => {
     const [error, setError] = useState(false)
     const [errorMessage, setErrorMessage] = useState('')
 
+
     const url = 'http://localhost:3001/api/auth/signin'
 
     const nav = useNavigate();
 
     const saveUser = async () => {
         const newUser = { email, password }
-
-
 
         try {
 
@@ -36,7 +35,9 @@ export const LogIn = () => {
                 },
                 body: JSON.stringify(newUser),
             })
-            const body = await response.json()
+            const body = await response.json() // return user ojbect
+            setUser(body) // props from app
+
             if (response.ok) {
                 //success
                 setSignIn('Success')
@@ -80,10 +81,12 @@ export const LogIn = () => {
                 {/* <label htmlFor="password" className={css.label2}> Password : </label> <br /> */}
                 <input type="password" value={password} id="password" placeholder=' &#xf023; Password*' onChange={handlePassword} className={css.input} /> <br /><br />
 
-                {signIn === 'Success' && <span style={{ color: 'green' }}>success </span>}
-                {signIn === 'Error' && <span style={{ color: 'red' }}>Error </span>}
+                
 
-                <button type='submit' onClick={saveUser} className={css.button}>Login</button>
+                <button type='submit' onClick={saveUser} className={css.button}>Login</button><br />
+
+                {signIn === 'Success' && <span style={{ color: 'green' }}>Success </span>}
+                {signIn === 'Error' && <span style={{ color: 'red', fontSize: "15px" }}>Error</span>}
                 <p className={css.p}>
                     <h5 className={css.h5}>Already have an account?</h5>
                     <a href='/Signup' className={css.link}>Sign Up</a>

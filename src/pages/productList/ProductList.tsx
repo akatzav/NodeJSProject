@@ -7,6 +7,7 @@ import { CallToActionSection } from '../../components/HomePage/CalltoActionSecti
 import axios from 'axios'
 import { Search } from '../../components/search/Search'
 import { BiSearchAlt } from 'react-icons/bi'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
 const url = 'http://localhost:3001/api/products';
 
@@ -17,7 +18,7 @@ async function loadProducts() {
     return products;
 }
 
-interface Product {
+export interface Product {
     _id: string;
     name: string;
     category: string;
@@ -27,10 +28,24 @@ interface Product {
     image: string;
 }
 
-export const ProductList = () => {
+export const ProductList = ({ user }: any) => {
     const [products, setProducts] = useState<Product[]>([])
-    const [search, setSearch] = useState('')
+    const [search, setSearch] = useState('');
+    const [card, setCard] = useState([]);
+    const [status,setStatus]=useState('')
+    const [updateUI, setUpdateUI] = useState(true)
+    const { id } = useParams();
+    console.log('id' ,id);
+    
     console.log(search);
+
+    const navigate = useNavigate();
+
+
+    const handleClick = (item: any) => {
+        console.log(item._id);
+
+    }
 
 
     useEffect(() => {
@@ -39,6 +54,15 @@ export const ProductList = () => {
         })
     }, []) // run after first render (mount)
 
+    //if(user.isAdmin)
+
+    const removeProduct = async ({ _id, product, setUpdateUI, IupdateMode }: any) => {
+        await axios.delete(`http://localhost:3001/api/products/${_id}`).then(res => {
+            console.log(res);
+            setUpdateUI((prevState: any) => !prevState)
+            setProducts([...products])
+        })
+    }
 
     return (
         <>
@@ -46,24 +70,29 @@ export const ProductList = () => {
                 <NavBar />
 
                 <div className={css.search}>
-                    <input type="text" onChange={(e) => setSearch(e.currentTarget.value)} placeholder=' &#xf002; Search' className={css.input}/>
+                    <input type="text" onChange={(e) => setSearch(e.currentTarget.value)} placeholder=' &#xf002; Search' className={css.input} />
                 </div>
 
                 <div className={css.page}>
                     {products.filter((product) => {
                         return search.toLowerCase() === '' ? product : product.name.toLocaleLowerCase().includes(search)
                     }).map(p => {
+
                         return (
-                            <div className={css.product} key={p._id}>
+                            <div className={css.product} data-aos='zoom-in' key={p._id}>
                                 <img src={p.image} alt={p.name} className={css.image} />
                                 <div className={css.cardBody}>
-                                    <h5 className={css.title}>{p.name}</h5>
-                                    <p className={css.p}>
-                                        <a className={css.brand}> {p.brand}</a> <br />
-                                        <a className={css.orginal}>{p.orginal_price}</a><br />
-                                        <a className={css.price}>{p.price}</a>
-                                    </p>
+                                    <Link to={`${p._id}`}>
+                                        <h5 className={css.title}>{p.name}</h5>
+                                        <p className={css.p}>
+                                            <span className={css.brand}> {p.brand}</span> <br />
+                                            <span className={css.orginal}>{p.orginal_price}</span><br />
+                                            <span className={css.price}>{p.price}</span>
+                                        </p>
+                                    </Link>
                                 </div>
+                                <button className={css.add} onClick={handleClick}>Add To Card</button>
+                                {!!user?.isAdmin && (<button onClick={removeProduct}>delete</button>)} 
 
                             </div>
                         )
