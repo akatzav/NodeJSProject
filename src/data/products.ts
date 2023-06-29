@@ -7,7 +7,7 @@ const data = {
             brand: "Samsung",
             orginal_price: "$270",
             price: "$245.37",
-            image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image1.jpg",
+            image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image11.jpg",
             countInStock: 10,
         },
         {
@@ -18,7 +18,7 @@ const data = {
             orginal_price: "$220",
             price: "$150",
             image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image2.jpg",
-            countInStock:10
+            countInStock: 10
         },
         {
             _id: "3",
@@ -28,7 +28,7 @@ const data = {
             orginal_price: "$570",
             price: "$500",
             image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image3.jpg",
-            countInStock:10
+            countInStock: 10
         },
         {
             _id: "4",
