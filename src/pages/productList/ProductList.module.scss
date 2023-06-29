@@ -37,7 +37,7 @@
 }
 
 .page {
-    margin-top: 200px;
+    margin-top: 100px;
     display: grid !important;
     grid-template-columns: auto auto auto !important;
     /*     margin-right: auto;
@@ -154,8 +154,23 @@
 
 .titleSelect {
     color: aliceblue;
+    text-shadow: 2px 3px 2px red;
 }
 
 .select {
-    margin-top: 200px;
+    margin-top: 150px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.select1 {
+    width: 150px;
+    height: 30px;
+    background-color: #000;
+    color: aliceblue;
+    border: 1px solid red;
+    font-family: lato;
+    font-size: 15px;
 }

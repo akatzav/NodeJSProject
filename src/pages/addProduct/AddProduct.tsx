@@ -94,7 +94,7 @@ export const AddProduct = ({ user }: any) => {
             <div className={css.added}>
                 <h1 className={css.title}>Add Product: </h1>
 
-                <select name="" id="" value={inPage} onChange={(e) => {
+                <select name="" id="" value={inPage} className={css.select} onChange={(e) => {
                     const select1 = e.currentTarget.value;
                     setInPage(select1)
                 }}>
@@ -110,7 +110,7 @@ export const AddProduct = ({ user }: any) => {
                 <input type="text" value={orginal_price} onChange={(e) => setOrginal_price(e.currentTarget.value)} placeholder='Orginal Price' className={css.input} /><br />
                 <input type="text" value={price} onChange={(e) => setPrice(e.currentTarget.value)} placeholder='Price' className={css.input} /><br />
                 <input type="text" value={image} onChange={(e) => setImage(e.currentTarget.value)} placeholder='image' className={css.input} /><br />
-                <button type='submit' onClick={addProduct} >
+                <button type='submit' onClick={addProduct} className={css.button}>
                     Add Product
                 </button>
                 <div>
@@ -127,7 +127,7 @@ export const AddProduct = ({ user }: any) => {
                 )
                 )}
             </ul> */}
-            {/* <FooterHomePage /> */}
+            <FooterHomePage />
         </div>
     )
 }

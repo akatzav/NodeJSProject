@@ -121,7 +121,7 @@ export const ProductList = ({ user, product, setUpdateUI, updateMode, onClickEdi
 
                 <div className={css.select}>
                     <h1 className={css.titleSelect}>filter by category:</h1>
-                    <select name="" id="" onChange={e => setFilter1(e.currentTarget.value)}>
+                    <select name="" id="" onChange={e => setFilter1(e.currentTarget.value)} className={css.select1}>
                         <option>all</option>
                         <option>computers</option>
                         <option>Phones</option>
@@ -130,14 +130,12 @@ export const ProductList = ({ user, product, setUpdateUI, updateMode, onClickEdi
 
 
                     <h1 className={css.titleSelect}>filter by brand:</h1>
-                    <select name="" id="" onChange={e => setFilter2(e.currentTarget.value)}>
+                    <select name="" id="" onChange={e => setFilter2(e.currentTarget.value)} className={css.select1}>
                         <option>all</option>
                         <option>Apple</option>
                         <option>Galaxy</option>
                         <option>Lenovo</option>
                         <option>Samsung</option>
-                        {/* <option>Galaxy</option>
-                        <option>Lenovo</option> */}
                     </select>
                 </div>
 
