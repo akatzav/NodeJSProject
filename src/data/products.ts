@@ -7,7 +7,7 @@ const data = {
             brand: "Samsung",
             orginal_price: "$270",
             price: "$245.37",
-            image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/image11.jpg",
+            image: "https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/imagenew1.jpg",
             countInStock: 10,
         },
         {
