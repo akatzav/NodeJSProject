@@ -6,7 +6,7 @@ import { BsPhone } from 'react-icons/bs'
 
 export const NavBar = () => {
     return (
-        <div >
+        <div className={css.mainNavbar}>
             <div className={css.NavBar}>
                 <Link to='/Signup' className={css.link}> Sign up</Link>
                 <Link to='/Signin' className={css.link}> Log In</Link>

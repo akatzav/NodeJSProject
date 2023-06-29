@@ -1,16 +1,16 @@
 .about {
-    margin-top:0;
-    overflow-y: scroll;
+    margin-top: 0;
     height: 100%;
-    background-color: #FFEBCD;
+    background-color: #030f22;
 }
 
-.title{
-    font-family: Dongle;
-    font-size: 70px;
-    margin-top: 50px;
+.title {
+    font-family: lato;
+    font-size: 40px;
+    margin-top: 120px;
     margin-bottom: 0;
-    color:#053505;
+    color: aliceblue;
+    text-shadow: 2px 3px 2px red;
 }
 
 .paragraph {
@@ -19,7 +19,8 @@
     margin-left: auto;
     margin-right: auto;
     line-height: 35px;
-    font-family: "Dongle";
-    font-size: 30px;
+    font-family: lato;
+    font-size: 20px;
     margin-bottom: 100px;
+    color: aliceblue;
 }

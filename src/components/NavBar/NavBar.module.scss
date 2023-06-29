@@ -1,61 +1,31 @@
-/* .navbar{
+.mainNavbar {
+    top: 40px;
+
+    @media (max-width:990px) {
+        position: fixed;
+        z-index: 1000;
+        position: absolute;
+        top: -80px;
+    }
+}
+
+.NavBar {
     position: absolute;
-    top: 80px;
-
-}
-
-.navbar a{
-    display: inline-block;
-    width: 100px;
-    padding: 10px;
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    font-family: lato;
-    font-weight: bold;
-    font-size: 22px;
-
-}
-
-.navbar a.active{
-    color: #7FFF00;
-}
-
-
-.pointer{
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #7FFF00;
-    transform: translateX(55px);
-    transition: transform 0.3s ease-in-out;
-}
-
-
-.navbar a:hover{
-    color: #7FFF00;
-    transition: color 0.3s ease-in-out;
-}
-
-.navbar a:nth-child(2):hover ~ .pointer{
-    transform: translateX(180px);
-}
-
-.navbar a:nth-child(3):hover ~ .pointer {
-    transform: translateX(305px);
-}
-
-.navbar a:nth-child(4):hover ~ .pointer {
-    transform: translateX(415px);
-} */
-
-.NavBar{
-    position: absolute;
-    top: 55px;
+    top: 45px;
     left: 300px;
+
+    @media (max-width:990px) {
+        top: 100px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-.link{
+.link {
     display: flex;
     display: inline-block;
     text-decoration: none;
@@ -65,26 +35,35 @@
     font-family: lato;
     font-size: 20px;
     padding: 10px;
-    border-radius: 25px;
+    border-radius: 5px;
     padding-top: 5px;
     padding-bottom: 7px;
-    transition: 0.4s ease-in-out !important;
+
+    @media (max-width:990px) {
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
-.link:hover{
-        transform: scale(1.5) !important;
-        border: 1px solid #7FFF00;
+.link:hover {
+    border: 1px solid #7FFF00;
 }
 
-
-.section{
-    
+.section {
     display: flex;
+
+    @media (max-width:990px) {
+        position: absolute;
+        top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-
-.section .name{
-position: fixed;
+.section .name {
+    position: fixed;
     z-index: 1000;
     position: absolute;
     top: 37px;
@@ -94,7 +73,17 @@ position: fixed;
     left: 90px;
 }
 
-.icon{
+.icon {
     position: absolute;
     left: 50px;
+    top: 42px;
+
+    @media (max-width:990px) {
+        position: absolute;
+        top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        z-index: 1000;
+    }
 }

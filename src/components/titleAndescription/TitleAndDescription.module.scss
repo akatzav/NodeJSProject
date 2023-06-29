@@ -7,6 +7,13 @@
     font-size: 80px;
     left: 100px;
     top: 150px;
+    @media (max-width:990px){
+        position: fixed;
+        z-index: 1000;
+        position: absolute;
+        left: auto;
+        right: 20px;
+    }
     
 
 }
@@ -17,5 +24,15 @@
     font-family: lato;
     font-size: 30px;
     top: 300px;
-    left: 200px;
+    left: 120px;
+    bottom: 300px;
+    @media (max-width:990px){
+        position: fixed;
+        z-index: 1000;
+        position: absolute;
+        left: auto;
+        right: 50px;
+        top: 400px;
+
+    }
 }

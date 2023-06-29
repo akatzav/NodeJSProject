@@ -1,0 +1,38 @@
+.product {
+    background-color: #030f22;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    color: aliceblue;
+    font-family: lato;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 25px;
+}
+
+.detail1 {}
+
+.label {
+    font-weight: bold;
+    text-shadow: 2px 3px 3px red;
+}
+
+.add {
+    background-color: deepskyblue;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: lato;
+    font-size: 12px;
+    font-weight: bold;
+    width: 200px;
+}
+
+.detail2 {
+    color: yellow;
+    font-weight: bold;
+}

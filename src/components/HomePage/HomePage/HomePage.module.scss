@@ -1,23 +1,17 @@
+body {
+    background-color: #030f22;
+    overflow-y: scroll;
+}
+
 .homePage {
-    /* background-image: url(https://raw.githubusercontent.com/akatzav/NodeJSProject/main/src/images/shopping4.jpg); */
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
-   /*  background: rgb(61, 88, 223);
-    background: radial-gradient(circle, rgb(119, 127, 165) 0%, rgba(18, 1, 5, 1) 72%); 
-
-    background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 73%);  */
-
-    /* background: rgb(61, 88, 223);
-        background: radial-gradient(circle, rgba(61, 88, 223, 0.9613970588235294) 0%, rgba(18, 1, 5, 1) 87%); */
-        background-color: #030f22;
-        width: 100%;
+    background-color: #030f22;
+    width: 100%;
     position: absolute;
     bottom: 0;
-    /*     filter: grayscale(30%);
- */
     top: auto;
     height: 100%;
 
@@ -26,4 +20,45 @@
 .section {
     display: flex;
     padding-top: 50px;
+
+    @media (max-width:990px) {}
+}
+
+.section2 {
+    position: absolute;
+    right: 100px;
+    display: flex;
+    top: 500px;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width:990px) {
+        display: block;
+    }
+}
+
+.card {
+    border: 1px solid red;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.title,
+.p {
+
+    margin-left: 0;
+    color: aliceblue;
+}
+
+.label {
+    color: chartreuse;
+    margin: 10px;
 }

@@ -1,18 +1,30 @@
-footer {
+.footer {
     background-color: #031430;
     position: absolute;
-    width: 100%;
-    bottom: 0;
-    height: auto;
-    position: relative;
-}
+    bottom: -150px;
 
-.footer {}
+    @media (max-width:767px) {
+        background-color: #031430;
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    @media (max-width:574px) {
+        width: 100%;
+        display: grid !important;
+        grid-template-columns: auto !important;
+    }
+
+}
 
 .p1 {
     display: flex;
 
-    @media (max-width:990px) {}
+    @media (max-width:574px) {
+        width: 100%;
+        display: grid !important;
+        grid-template-columns: auto !important;
+    }
 
 }
 
@@ -23,7 +35,7 @@ footer {
     bottom: 30px;
     left: 350px;
 
-    @media (max-width:990px) {
+    @media (max-width:767px) {
         border-left: 1px solid aliceblue;
         width: 150px;
     }
@@ -35,6 +47,8 @@ footer {
     margin-right: 200px;
     margin-left: 80px;
     line-height: 1.6;
+
+    @media (max-width:767px) {}
 }
 
 .contact {
@@ -43,6 +57,11 @@ footer {
     position: absolute;
     left: 450px;
     line-height: 1.6;
+
+    @media (max-width:574px) {
+        position: absolute;
+        right: 300px;
+    }
 }
 
 .form {
@@ -50,6 +69,10 @@ footer {
     right: 100px;
     margin-top: 10px;
     font-family: lato;
+
+    @media (max-width:767px) {
+        display: none;
+    }
 }
 
 .h5 {

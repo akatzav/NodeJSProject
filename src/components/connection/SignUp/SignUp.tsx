@@ -110,7 +110,7 @@ export const SignUp = () => {
         }
     }
 
-    console.log(password,confirmPassword,confirmPasswordError)
+    console.log(password, confirmPassword, confirmPasswordError)
 
 
     //if the value is empty
@@ -118,7 +118,7 @@ export const SignUp = () => {
         //מונע ריענון של העמוד
         e.preventDefault();
 
-        if (!isValidEmail(email) || !isValidPassword(password) ||!isValidConfirm(confirmPassword)) {
+        if (!isValidEmail(email) || !isValidPassword(password) || !isValidConfirm(confirmPassword)) {
             setError(true);
             setSubmit(false)
             alert('Please enter all fields')
@@ -155,10 +155,10 @@ export const SignUp = () => {
                     display: error ? '' : 'none',
                     color: 'red',
                     fontFamily: 'lato',
-                    fontSize: "15px",
+                    fontSize: "12px",
 
                 }}>
-                <h2>Please enter correct values </h2>
+                <h2>Please Enter correct values. </h2>
             </div>
         );
     };
@@ -170,7 +170,7 @@ export const SignUp = () => {
                 style={{
                     display: submit ? '' : 'none',
                     color: 'green',
-                    fontSize: "15px",
+                    fontSize: "12px",
                     fontFamily: "lato"
                 }}>
                 <h2>You have successfully registered!</h2>
@@ -182,7 +182,7 @@ export const SignUp = () => {
     return (
 
         <div className={css.signup}>
-            <Nav />
+            <NavBar />
 
             <form className={css.form}>
                 <h1 className={css.title}>Sign Up</h1>
@@ -214,8 +214,8 @@ export const SignUp = () => {
                 </div>
 
             </form>
-            {/*             <Footer />
- */}        </div>
+            <Footer />
+        </div>
     )
 }
 
