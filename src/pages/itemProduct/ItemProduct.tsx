@@ -35,18 +35,22 @@ export const ItemProduct = (prop: any) => {
             <div className={css.product}>
 
                 <p className={css.p}>
-                    <img src={product?.image ?? ''} alt='' /><br />
-                    <label htmlFor="" className={css.label}>Name: </label>
-                    <li className={css.detail0}>{product?.name ?? ''}</li><br />
-                    <label htmlFor="" className={css.label}>Brand: </label>
-                    <li className={css.detail1}>{product?.brand ?? ''}</li><br />
-                    <label htmlFor="" className={css.label}>Price: </label>
-                    <li className={css.detail2}>{product?.price ?? ''}</li><br />
-                    <label htmlFor="" className={css.label}>Instead Of: </label>
-                    <li className={css.detail3}>{product?.orginal_price ?? ''}</li><br />
-                    <label htmlFor="" className={css.label}>Category: </label>
-                    <li className={css.detail5}>{product?.category ?? ''}</li><br />
-                    <button className={css.add}>Add To Card</button>
+                    <div className={css.main}>
+                        <img src={product?.image ?? ''} alt={product?.name} className={css.image} /><br />
+                    </div>
+                    {/* <label htmlFor="" className={css.label}>Name: </label> */}
+                    <div className={css.section}>
+                        <li className={css.detail0}>{product?.name ?? ''}</li><br />
+                        <label htmlFor="" className={css.label}>Brand: </label>
+                        <li className={css.detail1}>{product?.brand ?? ''}</li><br />
+                        <label htmlFor="" className={css.label}>Price: </label>
+                        <li className={css.detail2}>{product?.price ?? ''}</li><br />
+                        <label htmlFor="" className={css.label}>Instead Of: </label>
+                        <li className={css.detail3}>{product?.orginal_price ?? ''}</li><br />
+                        <label htmlFor="" className={css.label}>Category: </label>
+                        <li className={css.detail5}>{product?.category ?? ''}</li><br />
+                        <button className={css.add}>Add To Card</button>
+                    </div>
                 </p>
 
             </div>

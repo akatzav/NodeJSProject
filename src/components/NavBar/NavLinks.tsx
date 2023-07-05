@@ -4,7 +4,8 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { BsPhone } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
-export const NavLinks = () => {
+export const NavLinks = ({ user }: any) => {
+    /* console.log('user', user); */
 
     return (
 
@@ -18,7 +19,8 @@ export const NavLinks = () => {
                 <Link to='/' className={css.link1}>  Home </Link>
                 <Link to='/About' className={css.link1}>  About</Link>
                 <Link to='/products' className={css.link1}> products</Link>
-                <Link to='/add-to-card' className={css.link1}> <AiOutlineShoppingCart /></Link>
+                {!!user?.isAdmin ? <Link to='/add' className=''>Add</Link> : null}
+                <Link to='/card' className={css.link1}> <AiOutlineShoppingCart /></Link>
             </div>
 
         </div>

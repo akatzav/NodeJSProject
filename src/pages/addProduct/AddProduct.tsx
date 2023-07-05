@@ -24,7 +24,6 @@ export const AddProduct = ({ user }: any) => {
     const [image, setImage] = useState('');
     const [updateUI, setUpdateUI] = useState(true)
     const [selects, setSelects] = useState('');
-    console.warn(selects);
 
     const showToastMessage = () => {
         toast.success('Success Added !', {
@@ -98,7 +97,6 @@ export const AddProduct = ({ user }: any) => {
                     const select1 = e.currentTarget.value;
                     setInPage(select1)
                 }}>
-                    <h1>{inPage}</h1>
                     <option>Will product appear on the main page?</option>
                     <option>true</option>
                     <option>false</option>

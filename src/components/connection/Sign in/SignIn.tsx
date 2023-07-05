@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { NavLinks } from '../../NavBar/NavLinks';
 import css from './SignIn.module.scss'
 import SignUp from '../SignUp/SignUp';
@@ -44,7 +44,7 @@ export const LogIn = ({ setUser }: any) => {
             if (response.ok) {
                 //success
                 setSignIn('Success')
-                nav('/');
+                nav('/')
 
             } else {
                 //error 

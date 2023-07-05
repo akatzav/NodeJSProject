@@ -1,12 +1,13 @@
-.productList {
-    /*     background-color: black;
- */
-}
+.productList {}
 
 .search {
     position: absolute;
     top: 85px;
     right: 50px;
+
+    @media (max-width:990px) {
+        margin-top: -90px;
+    }
 }
 
 .input {
@@ -18,6 +19,7 @@
     font-family: 'FontAwesome';
     font-size: 15px;
     margin-top: -20px;
+    color: red;
 
     @media (max-width:990px) {
         position: absolute;
@@ -52,6 +54,8 @@
     @media (max-width: 990px) {
         display: grid !important;
         grid-template-columns: auto !important;
+
+        margin-top: 600px;
     }
 }
 
@@ -163,6 +167,11 @@
     margin-left: auto;
     margin-right: auto;
 
+    @media (max-width:990px) {
+        position: absolute;
+        top: 150px;
+    }
+
 }
 
 .select1 {
@@ -173,4 +182,20 @@
     border: 1px solid red;
     font-family: lato;
     font-size: 15px;
+}
+
+.isAdmin {
+    position: absolute;
+    left: 680px;
+    display: flex;
+    top: 70px;
+    color: red;
+    font-family: lato;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.isAdmin:hover {
+    color: chartreuse;
 }

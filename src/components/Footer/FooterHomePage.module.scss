@@ -2,11 +2,15 @@
     background-color: #031430;
     position: absolute;
     bottom: -150px;
+    position: relative;
+    top: 1000px;
 
     @media (max-width:767px) {
         background-color: #031430;
         width: 50%;
         margin-bottom: 30px;
+        position: absolute;
+        position: relative;
     }
 
     @media (max-width:574px) {

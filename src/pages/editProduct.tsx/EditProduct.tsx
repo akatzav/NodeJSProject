@@ -2,14 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { Product } from '../productList/ProductList';
 import { ToastContainer } from 'react-toastify';
 import axios from 'axios';
-import { useParams } from 'react-router';
+import { Link, useParams } from 'react-router-dom';
 import { warn } from 'console';
 import css from './EditProduct.module.scss'
 import { Footer } from '../../components/Footer/Footer';
 import { NavLinks } from '../../components/NavBar/NavLinks';
-export const EditProduct = () => {
 
-    const [products, setProducts] = useState<Product[]>([]);
+
+export const EditProduct = ({ user }: any) => {
+
+    const [product, setProduct] = useState<any>(null)
+
     const [inPage, setInPage] = useState('')
     const [name, setName] = useState('');
     const [brand, setBrand] = useState('');
@@ -19,10 +22,11 @@ export const EditProduct = () => {
     const [image, setImage] = useState('');
     const [updateUI, setUpdateUI] = useState(true)
     const { id } = useParams();
+    const params = useParams();
+    console.log(params);
 
-    const updateProduct = () => {
-        console.warn(name, brand, category, orginal_price, price, price, image)
-    }
+
+
 
     useEffect(() => {
         getProductDetails(id);
@@ -30,52 +34,50 @@ export const EditProduct = () => {
 
     const getProductDetails = async (id: any) => {
         console.warn("id:", id)
-        /* let result = await fetch(`http://localhost:3001/api/products/${params._id}`);
-            
-        
-        result = await result.json();
-        console.warn(result)
- */
+
+        await axios.get(`http://localhost:3001/api/products/${id}`).then(res => {
+            console.log('res.data', res.data);
+            setProduct(res.data)
+        });
+
+
+
     }
 
 
-    /* const saveProduct = async () => {
-        await axios.put(`http://localhost:3001/api/products/${id}`, {
-            data: {
-                name,brand,category,orginal_price,price,image
-            }
-        }).then(res => {
-            console.log(res);
-            setUpdateUI((prevState: any) => !prevState)
-            setProducts([...products])
-        });
-    } 
+    const updateProduct = (key: string, value: any) => {
+        setProduct({ ...product, [key]: value })
+    }
 
-    const onClickEdit = (product: any) => {
-        console.log(product)
-        setName(product.name)
-        setBrand(product.brand)
-        setCategory(product.category)
-        setOrginal_price(product.orginal_price)
-        setPrice(product.price)
-        setImage(product.image)
-    } */
+    console.log('product', product)
+
+
+    const saveProduct = async () => {
+        const response = await axios.put(`http://localhost:3001/api/products/${id}`, product, {
+            headers: {
+                'x-auth-token': localStorage.getItem('accessToken') ?? '',
+            }
+        })
+        console.log('save product', response);
+
+    }
 
     return (
         <>
             <NavLinks />
+            {user?.isAdmin ? <Link to={'/add'} className={css.isAdmin}>Add</Link> : null}
             <div className={css.update}>
                 <h1 className={css.title}>
                     Update Product
                 </h1>
-                <input className={css.input} type="text" value={inPage} onChange={(e) => setInPage(e.currentTarget.value)} placeholder='Show the product on the Home?' /><br />
-                <input className={css.input} type="text" value={name} onChange={(e) => setName(e.currentTarget.value)} placeholder='Name' /><br />
-                <input className={css.input} type="text" value={brand} onChange={(e) => setBrand(e.currentTarget.value)} placeholder='Brand' /><br />
-                <input className={css.input} type="text" value={category} onChange={(e) => setCategory(e.currentTarget.value)} placeholder='Category' /><br />
-                <input className={css.input} type="text" value={orginal_price} onChange={(e) => setOrginal_price(e.currentTarget.value)} placeholder='Orginal Price' /><br />
-                <input className={css.input} type="text" value={price} onChange={(e) => setPrice(e.currentTarget.value)} placeholder='Price' /><br />
-                <input className={css.input} type="text" value={image} onChange={(e) => setImage(e.currentTarget.value)} placeholder='image' /><br />
-                <button type='submit' className={css.button}>
+                <input className={css.input} type="text" value={product?.inPage} onChange={(e) => updateProduct('inPage', e.currentTarget.value)} placeholder='Show the product on the Home?' /><br />
+                <input className={css.input} type="text" value={product?.name} onChange={(e) => updateProduct('name', e.currentTarget.value)} placeholder='Name' /><br />
+                <input className={css.input} type="text" value={product?.brand} onChange={(e) => updateProduct('brand', e.currentTarget.value)} placeholder='Brand' /><br />
+                <input className={css.input} type="text" value={product?.category} onChange={(e) => updateProduct('category', e.currentTarget.value)} placeholder='Category' /><br />
+                <input className={css.input} type="text" value={product?.orginal_price} onChange={(e) => updateProduct('orginal_price', e.currentTarget.value)} placeholder='Orginal Price' /><br />
+                <input className={css.input} type="text" value={product?.price} onChange={(e) => updateProduct('price', e.currentTarget.value)} placeholder='Price' /><br />
+                <input className={css.input} type="text" value={product?.image} onChange={(e) => updateProduct('image', e.currentTarget.value)} placeholder='image' /><br />
+                <button type='submit' className={css.button} onClick={saveProduct}>
                     Update Product
                 </button>
                 <ToastContainer />

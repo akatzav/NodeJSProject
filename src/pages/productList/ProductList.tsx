@@ -34,7 +34,7 @@ export interface Product {
     image: string;
 }
 
-export const ProductList = ({ user, product, setUpdateUI, updateMode, onClickEdit }: any) => {
+export const ProductList = ({ user, product, setUpdateUI, updateMode, onClickEdit, addToCart }: any) => {
     const [products, setProducts] = useState<Product[]>([])
     const [search, setSearch] = useState('');
     const [card, setCard] = useState([]);
@@ -114,6 +114,7 @@ export const ProductList = ({ user, product, setUpdateUI, updateMode, onClickEdi
         <>
             <div className={css.productList}>
                 <NavLinks />
+                {user?.isAdmin ? <Link to={'/add'} className={css.isAdmin}>Add</Link> : null}
 
                 <div className={css.search}>
                     <input type="text" onChange={(e) => setSearch(e.currentTarget.value)} placeholder=' &#xf002; Search' className={css.input} />
@@ -131,11 +132,13 @@ export const ProductList = ({ user, product, setUpdateUI, updateMode, onClickEdi
 
                     <h1 className={css.titleSelect}>filter by brand:</h1>
                     <select name="" id="" onChange={e => setFilter2(e.currentTarget.value)} className={css.select1}>
-                        <option>all</option>
+                        <option>All</option>
                         <option>Apple</option>
                         <option>Galaxy</option>
                         <option>Lenovo</option>
                         <option>Samsung</option>
+                        <option>Microsoft</option>
+                        <option>Dell</option>
                     </select>
                 </div>
 
@@ -143,11 +146,11 @@ export const ProductList = ({ user, product, setUpdateUI, updateMode, onClickEdi
                     {products.filter((product) => {
                         return search.toLowerCase() === '' ? product : product.name.toLocaleLowerCase().includes(search)
                     }).filter((c) => {
-                        if (filter1 === 'all') {
+                        if (filter1 === 'All') {
                             return c;
                         } else if (c.category.toLowerCase().includes(filter1.toLowerCase())) { return c; }
                     }).filter((b) => {
-                        if (filter2 === 'all') {
+                        if (filter2 === 'All') {
                             return b;
                         } else if (b.brand.toLowerCase().includes(filter2.toLowerCase())) { return b; }
                     }).map(p => {
@@ -172,15 +175,13 @@ export const ProductList = ({ user, product, setUpdateUI, updateMode, onClickEdi
 
                                     <ToastContainer />
                                     {!!user?.isAdmin && (<button className={css.delete} onClick={() => removeProduct(p._id)}> delete </button>)}
-                                    <button className={css.add} onClick={handleClick}>Add To Card</button>
+                                    <button className={css.add} onClick={() => addToCart(p)}>Add To Cart</button>
                                     {!!user?.isAdmin && (<Link to={`/update/${p._id}`} className={css.update}>Update</Link>)}
                                 </div>
                             </div>
                         )
                     })}
                 </div>
-                {/* <CallToActionSection /> */}
-
             </div>
             <Footer />
         </>

@@ -1,10 +1,13 @@
-.update {}
+.update {
+    margin-top: 100px;
+}
 
 .title {
     color: aliceblue;
     font-family: lato;
     font-weight: bold;
     font-size: 40px;
+    text-shadow: 2px 3px 3px red;
 }
 
 .input {
@@ -29,4 +32,20 @@
 
     font-family: lato;
     font-size: 15px;
+}
+
+.isAdmin {
+    position: absolute;
+    left: 680px;
+    display: flex;
+    top: 70px;
+    color: red;
+    font-family: lato;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.isAdmin:hover {
+    color: chartreuse;
 }

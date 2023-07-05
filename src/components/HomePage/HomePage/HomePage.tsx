@@ -19,7 +19,7 @@ async function loadProducts() {
     return products;
 }
 
-export const HomePage = () => {
+export const HomePage = ({ user }: any) => {
 
     const [products, setProducts] = useState<Product[]>([]);
     const [search, setSearch] = useState('');
@@ -33,13 +33,16 @@ export const HomePage = () => {
     return (
         <>
             <div className={css.homePage}>
-                <div>
-                    <Search />
+
+                <div className={css.search}>
+                    <input type="text" onChange={(e) => setSearch(e.currentTarget.value)} placeholder=' &#xf002; Search' className={css.input} />
                 </div>
 
 
+
                 <section className={css.section}>
-                    <NavBar />
+                    {user ? <NavLinks /> : <NavBar />}
+                    {user?.isAdmin ? <Link to='/add' className={css.isAdmin}>Add</Link> : null}
                     <TitleAndDescription />
                 </section>
 
@@ -51,8 +54,8 @@ export const HomePage = () => {
                             return (
                                 <div className={css.card}>
                                     <Link to={`${p._id}`} className={css.link}>
-                                        {/*                                         <img src={p.image} alt={p.name} />
- */}                                        <h5 className={css.title}>{p.name}</h5>
+                                        <img src={p.image} alt={p.name} className={css.image} />
+                                        <h5 className={css.title}>{p.name}</h5>
                                         <p className={css.p}>
                                             <label htmlFor="" className={css.label}>Orginal price: </label>
                                             <span className={css.orginal}>{p.orginal_price}</span><br />

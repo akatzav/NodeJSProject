@@ -17,12 +17,18 @@ import { Tutorial } from './pages/tutorial/Tutorial';
 import { Footer } from './components/Footer/Footer';
 import { EditProduct } from './pages/editProduct.tsx/EditProduct';
 import { Filter } from './components/filter/Filter';
+import { Card } from './components/card/Card';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
 
   const [user, setUser] = useState<any>(null)
   const [ready, setReady] = useState(false)
-  console.log('user', user);
+  /*   console.log('user', user);
+   */
+  const [cart, setCart] = useState<any[]>([])
 
   useEffect(() => {
     fetch('http://localhost:3001/api/auth/current', {
@@ -43,6 +49,20 @@ function App() {
 
   }, [])
 
+  const showSuccessToastMessage = () => {
+    toast.success('Product added to cart', {
+      position: toast.POSITION.TOP_RIGHT
+    });
+  };
+
+  const addToCart = (p: any) => {
+    setCart([...cart, p])
+    showSuccessToastMessage();
+  }
+
+
+  console.log('cart', cart);
+
   if (!ready) {
     return <div>loading...</div>
   }
@@ -51,21 +71,19 @@ function App() {
   return (
 
     <div className="App">
-
       <Routes >
-        <Route path='/' element={<HomePage />} />
+        <Route path='/' element={<HomePage user={user} />} />
         <Route path='/Signup' element={<SignUp />} />
         <Route path="/Signin" element={<LogIn setUser={setUser} />} />
-        <Route path='/About' element={<About />} />
-        <Route path='/Favoraite' element={<Test />} />
-        <Route path='/Products' element={<ProductList user={user} />} />
+        <Route path='/About' element={<About user={user} />} />
+        <Route path='/card' element={<Card cart={cart} setCard={setCart} />} />
+        <Route path='/Products' element={<ProductList addToCart={addToCart} user={user} />} />
         <Route path='/Products/:id' element={<ItemProduct />} />
-        <Route path='/products/add' element={<AddProduct user={user} />} />
-        <Route path='/update/:id' element={<EditProduct />} />
+        <Route path='/add' element={<AddProduct user={user} />} />
+        <Route path='/update/:id' element={<EditProduct user={user} />} />
         <Route path='/Filter' element={<Filter />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {/*  <Footer /> */}
     </div>
   );
 }

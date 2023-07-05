@@ -8,11 +8,11 @@ import { MdPhoneIphone } from 'react-icons/md'
 import { SiSamsung } from 'react-icons/si'
 
 export const Footer = () => {
-    const [email,setEmail]=useState();
+    const [email, setEmail] = useState();
     return (
         <footer className={css.footer}>
-            <p className={css.p1}>
-                
+            <div className={css.p1}>
+
                 <ul className={css.brand}>
                     <h5 className={css.h52}>Brand:</h5>
                     <li><AiFillApple /> Apple</li>
@@ -34,12 +34,12 @@ export const Footer = () => {
 
                 <form action="" className={css.form}>
                     <h5 className={css.h5}>Want tips for smart shopping?</h5>
-                    <input type="email" placeholder='Enter your Email' className={css.input} value={email}/>
+                    <input type="email" placeholder='Enter your Email..' className={css.input} value={email} />
                     <button className={css.button}>Submit</button>
-                    <p className={css.copy}><AiOutlineCopyrightCircle /> Avigail Katzav, 2023</p>
+                    <div className={css.copy}><AiOutlineCopyrightCircle /> Avigail Katzav, 2023</div>
                 </form>
 
-            </p>
+            </div>
         </footer>
     )
 }
