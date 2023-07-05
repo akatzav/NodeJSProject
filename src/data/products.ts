@@ -11,7 +11,7 @@ const data = {
             countInStock: 10,
         },
         {
-            _id: "2",
+            _id: "2yuiu",
             name: "Xiaomi 11T 5G 256GB",
             category: "Phones",
             brand: "Xiaomi",
